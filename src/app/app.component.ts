@@ -1,35 +1,45 @@
-import { Component, ViewChild } from '@angular/core';
-import { Team, Key, Tournament } from './models';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Team, Key, Tournament, Round } from './models';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  
-  title = 'summoners-rift';
-  @ViewChild("content") content = HTMLElement;
+export class AppComponent implements OnInit{
 
-  ngOnInit() {
-    const teams = [
-      new Team('Time A'),
-      new Team('Time B'),
-      new Team('Time C'),
-      new Team('Time D'),
-      new Team('Time E'),
-      new Team('Time F'),
-      new Team('Time G'),
-      new Team('Time H'),
-    ];
+  title = 'Summoners-Rift';
 
-    const tournament = new Tournament(teams);
-    debugger;
-    tournament.generateNewRound();
-    debugger
-    tournament.generateNewRound();
-    debugger
-       
+  teams: Team[] = [];
+  rounds: Round[] = [];
+
+  tournament: Tournament;
+
+  addTeam(team: string) {
+    const newTeam = new Team(team);
+    this.teams.push(newTeam);
+    try {
+      this.tournament = new Tournament(this.teams);
+      this.rounds = this.tournament.round;
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  newRound() {
+    this.tournament.generateNewRound();
+    this.rounds = this.tournament.round;
+  }
+
+  ngOnInit(): void {
+    this.addTeam('A');
+    this.addTeam('B');
+    this.addTeam('C');
+    this.addTeam('D');
+    this.addTeam('E');
+    this.addTeam('F');
+    this.addTeam('G');
+    this.addTeam('H');
   }
 
 }

@@ -44,4 +44,8 @@ export class Tournament {
         this._rounds.push(round);
     }
 
+    get round(): Round[] {
+        return this._rounds;
+    }
+
 }

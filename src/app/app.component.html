@@ -1,4 +1,7 @@
 <h1>{{title}}</h1>
 <div id="content">
-  
+    <app-add-team (team)="addTeam($event)"></app-add-team>
+    <app-team [teams]="teams"></app-team>
+    <button (click)="newRound()">Gerar nova rodada</button>
+    <app-tournament [rounds]="rounds"></app-tournament>
 </div>

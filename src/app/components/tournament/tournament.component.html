@@ -1,0 +1,9 @@
+<div class="tournament">
+    <div class="round" *ngFor="let r of rounds">
+
+        <div *ngFor="let k of r.keys">
+            <app-key [key]="k"></app-key>
+        </div>        
+
+    </div>
+</div>

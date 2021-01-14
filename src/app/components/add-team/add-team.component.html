@@ -1,0 +1,7 @@
+<div class="add-team">
+    <form [formGroup]="formTeam" (ngSubmit)="onSubmit()">
+        <label for="">Nome do Time</label><br>
+        <input type="text" placeholder="Informe o nome do Time" formControlName="name">
+        <button type="submit">+</button>
+    </form>
+</div>

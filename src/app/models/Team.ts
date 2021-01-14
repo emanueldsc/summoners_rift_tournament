@@ -3,7 +3,7 @@ export class Team {
     private _name: string
     private wonFrom: Team[]
 
-    constructor(name: string) {
+    constructor(name: string = "") {
         this._name = name
     }
 

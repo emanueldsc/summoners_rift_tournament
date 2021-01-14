@@ -13,4 +13,8 @@ export class Round{
         const winers = this._keys.map(key => key.getWiner());
         return winers;
     }
+
+    get keys(): Key[]{
+        return this._keys;
+    }
 }
