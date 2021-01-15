@@ -1,3 +1,24 @@
+# Link do App funcionando
+
+[https://summoners-rift-tournament.vercel.app/](https://summoners-rift-tournament.vercel.app/)
+
+## Instruções para execução local
+
+Clone o projeto para sua maquina instale as dependências e rode o projeto com live-server ou ng server
+
+```
+npm i
+ng serve
+```
+
+ou 
+
+```
+npm i
+cd dist
+live-server .
+```
+
 # SummonersRift
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
