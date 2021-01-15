@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Round, Team } from 'src/app/models';
+import { Component, Input, OnInit } from '@angular/core'
+import { Round, Team } from 'src/app/models'
 
 @Component({
   selector: 'app-tournament',
@@ -8,7 +8,7 @@ import { Round, Team } from 'src/app/models';
 })
 export class TournamentComponent {
 
-  @Input() rounds: Round[];
+  @Input() rounds: Round[]
 
   constructor() { }
 

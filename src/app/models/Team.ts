@@ -8,7 +8,7 @@ export class Team {
     }
 
     get name(): string {
-        return this._name.toString();
+        return this._name.toString()
     }
 
 }

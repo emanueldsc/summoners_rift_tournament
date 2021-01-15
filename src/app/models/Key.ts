@@ -2,9 +2,9 @@ import { Team } from './Team'
 
 export class Key {
 
-    private _teamA: Team;
-    private _teamB: Team;
-    private winer: Team = null
+    private _teamA: Team
+    private _teamB: Team
+    private _winer: Team = null
 
     constructor(teamA: Team, teamB: Team) {
         this._teamA = teamA
@@ -13,25 +13,28 @@ export class Key {
 
     get teamA(): string { return this._teamA.name }
     get teamB(): string { return this._teamB.name }
+    get winer(): string {
+        if (this._winer)
+            return this._winer.name
+        return null
+    }
 
     getWiner() {
-        const winer = Math.floor(Math.random() * (1 - 0) + 0)
-        this.winer = winer ? this._teamA : this._teamB
-        return this.winer
+        if (this._winer) 
+            return this._winer;
+        const winer = Math.random()
+        this._winer = winer > 0.5 ? this._teamA : this._teamB
+        return this._winer
     }
 
     winerA() {
-        this.winer = this._teamA;
-        return this.winer;
+        this._winer = this._teamA
+        return this._winer
     }
 
     winerB() {
-        this.winer = this._teamB;
-        return this.winer;
-    }
-
-    toString() {
-        return `(${this._teamA.name} vs ${this._teamB.name})`;
+        this._winer = this._teamB
+        return this._winer
     }
 
 }

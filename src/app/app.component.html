@@ -1,7 +1,13 @@
 <h1>{{title}}</h1>
 <div id="content">
+    <p class="legend">
+        Forneça um número de times em potência de 2<br>
+        exemplo: 2, 4, 8, 16, 32, ...<br>
+        Apos incluir os times clique em 'gerar nova rodada'.
+        Você também pode escolher o time vencedor de uma chave clicando sobre ele.
+    </p>
     <app-add-team (team)="addTeam($event)"></app-add-team>
     <app-team [teams]="teams"></app-team>
-    <button (click)="newRound()">Gerar nova rodada</button>
+    <button id="btn-newRound" (click)="newRound()">Gerar nova rodada</button>
     <app-tournament [rounds]="rounds"></app-tournament>
 </div>

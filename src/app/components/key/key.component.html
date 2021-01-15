@@ -1,10 +1,8 @@
 <div class="key-container">
-    <div class="team">
+    <div (click)="setWinner('A')" class="team" [ngClass]="key.winer && key.winer == key.teamA ? 'winner' : ''">
         {{key.teamA}}
-        <button>></button>
     </div>
-    <div class="team">
+    <div (click)="setWinner('B')" *ngIf="key.teamA !== key.teamB" class="team" [ngClass]="key.winer && key.winer == key.teamB ? 'winner' : ''">
         {{key.teamB}}
-        <button>></button>
     </div>
 </div>
